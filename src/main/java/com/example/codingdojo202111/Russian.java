@@ -10,7 +10,6 @@ public class Russian {
             Tuple.of(x, y),
             it -> it._1 >= 1,
             it -> it.map(left -> left / 2, right -> right * 2))
-        .peek(item -> System.out.print(String.valueOf(item)))
         .filter(item -> item._1 % 2 != 0)
         .mapToInt(item -> item._2)
         .sum();
