@@ -30,4 +30,10 @@ public class Russian {
   }
 
 
+  public static int sumRight(List<Tuple2<Integer, Integer>> plainList) {
+    return plainList
+        .stream()
+        .mapToInt(item -> item._2)
+        .sum();
+  }
 }

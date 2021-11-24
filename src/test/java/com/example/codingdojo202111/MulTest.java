@@ -42,4 +42,13 @@ class MulTest {
         Tuple.of(1, 3328)
     ));
   }
+
+  @Test
+  void sumRight() {
+    assertThat(Russian.sumRight(List.of(
+        Tuple.of(67, 52),
+        Tuple.of(33, 104),
+        Tuple.of(1, 3328)
+    ))).isEqualTo(3484);
+  }
 }
