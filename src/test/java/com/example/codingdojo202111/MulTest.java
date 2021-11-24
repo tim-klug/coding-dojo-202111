@@ -25,4 +25,21 @@ class MulTest {
         Tuple.of(1, 3328)
     ));
   }
+
+  @Test
+  void removeEvenLeft() {
+    assertThat(Russian.removeEvenLeft(List.of(
+        Tuple.of(67, 52),
+        Tuple.of(33, 104),
+        Tuple.of(16, 208),
+        Tuple.of(8, 416),
+        Tuple.of(4, 832),
+        Tuple.of(2, 1664),
+        Tuple.of(1, 3328)
+    ))).isEqualTo(List.of(
+        Tuple.of(67, 52),
+        Tuple.of(33, 104),
+        Tuple.of(1, 3328)
+    ));
+  }
 }
