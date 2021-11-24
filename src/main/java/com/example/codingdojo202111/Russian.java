@@ -22,17 +22,10 @@ public class Russian {
     return result;
   }
 
-  public static List<Tuple2<Integer, Integer>> removeEvenLeft(List<Tuple2<Integer, Integer>> painList) {
+  public static int removeEvenLeft(List<Tuple2<Integer, Integer>> painList) {
     return painList
         .stream()
         .filter(item -> item._1 % 2 != 0)
-        .toList();
-  }
-
-
-  public static int sumRight(List<Tuple2<Integer, Integer>> plainList) {
-    return plainList
-        .stream()
         .mapToInt(item -> item._2)
         .sum();
   }
