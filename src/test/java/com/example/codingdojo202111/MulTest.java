@@ -10,32 +10,6 @@ class MulTest {
 
   @Test
   void callMethod() {
-    assertThat(Russian.Mul(2, 4)).isNotNull();
-  }
-
-  @Test
-  void divideAndMultiplyByTwo() {
-    assertThat(Russian.divideAndMultiply(67, 52)).isEqualTo(List.of(
-        Tuple.of(67, 52),
-        Tuple.of(33, 104),
-        Tuple.of(16, 208),
-        Tuple.of(8, 416),
-        Tuple.of(4, 832),
-        Tuple.of(2, 1664),
-        Tuple.of(1, 3328)
-    ));
-  }
-
-  @Test
-  void removeEvenLeftAndSumRight() {
-    assertThat(Russian.removeEvenLeft(List.of(
-        Tuple.of(67, 52),
-        Tuple.of(33, 104),
-        Tuple.of(16, 208),
-        Tuple.of(8, 416),
-        Tuple.of(4, 832),
-        Tuple.of(2, 1664),
-        Tuple.of(1, 3328)
-    ))).isEqualTo(3484);
+    assertThat(Russian.Mul(67, 52)).isEqualTo(3484);
   }
 }

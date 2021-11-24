@@ -1,30 +1,16 @@
 package com.example.codingdojo202111;
 
 import io.vavr.Tuple;
-import io.vavr.Tuple2;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Stream;
 
 public class Russian {
 
   public static int Mul(int x, int y) {
-    return -1;
-  }
-
-  public static List<Tuple2<Integer, Integer>> divideAndMultiply(int x, int y) {
-    var result = new ArrayList<Tuple2<Integer, Integer>>();
-    result.add(Tuple.of(x, y));
-    while(x > 1) {
-      x = x/2;
-      y = y*2;
-      result.add(Tuple.of(x, y));
-    }
-    return result;
-  }
-
-  public static int removeEvenLeft(List<Tuple2<Integer, Integer>> painList) {
-    return painList
-        .stream()
+    return Stream.iterate(
+            Tuple.of(x, y),
+            it -> it._1 >= 1,
+            it -> it.map(left -> left / 2, right -> right * 2))
+        .peek(item -> System.out.print(String.valueOf(item)))
         .filter(item -> item._1 % 2 != 0)
         .mapToInt(item -> item._2)
         .sum();
